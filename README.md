@@ -94,7 +94,7 @@ results/run_YYYYMMDD_HHMMSS/
 pip install -e .
 
 # OR exact pins used to produce the paper numbers (recommended for
-# reviewers reproducing reported results):
+# reproducing reported results):
 pip install -r requirements.txt && pip install -e . --no-deps
 ```
 
@@ -209,9 +209,9 @@ nohup python -u run_pipeline.py --model llama8b yi9b gemma9b              --gpu 
 
 See [docs/EXPERIMENT_GUIDE.md](docs/EXPERIMENT_GUIDE.md) for all experiments and CLI flags.
 
-### New Experiments (Revision)
+### Additional Experiments
 
-Six new scripts for revision experiments. Four are GPU experiments in `experiments/`, two are post-hoc analysis in `analysis/`.
+Six additional experiment scripts. Four are GPU experiments in `experiments/`, two are post-hoc analysis in `analysis/`.
 
 | Script | Exp | What it does |
 |--------|-----|--------------|
@@ -284,7 +284,7 @@ The pipeline executes experiments in three phases per model:
 | C | 6 (mitigation) | per-token asymmetric | protection_sweep, mitigation, mitigation_8bit |
 | Supplementary (standalone only) | Appendix | per-token asymmetric | kivi, system_prompt, temperature, naive_baselines |
 
-> **Note:** The supplementary experiments (kivi, system_prompt, temperature, naive_baselines) are **not** included in `--all` runs. They must be invoked individually as standalone scripts; see [New Experiments (Revision)](#new-experiments-revision) above for usage.
+> **Note:** The supplementary experiments (kivi, system_prompt, temperature, naive_baselines) are **not** included in `--all` runs. They must be invoked individually as standalone scripts; see [Additional Experiments](#additional-experiments) above for usage.
 
 After `layer_ablation` completes, the pipeline automatically detects critical layers and passes them to downstream experiments (channel ablation, protection sweep, mitigation). If layer ablation hasn't run, hardcoded defaults are used.
 
@@ -293,7 +293,7 @@ Each experiment runs as a **subprocess** for GPU memory isolation and crash safe
 ## Directory Structure
 
 ```
-alignment-collapse-kv-quantization/
+kv-quantization-alignment/
   core/                          # Shared modules
     model_loader.py              #   Model registry + loading
     quantization.py              #   KVQuantizer, KVQuantizerDual (KIVI), FlexQuantizer
