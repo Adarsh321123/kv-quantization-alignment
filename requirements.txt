@@ -1,0 +1,33 @@
+# KV Cache Quantization & LLM Safety
+#
+# Pinned versions for reproducibility (Python 3.10, CUDA 12.x).
+# Use these exact pins on any cloud GPU provider to ensure reproducibility.
+#
+# Install:  pip install -r requirements.txt
+
+# Core ML/DL
+torch==2.9.0
+transformers==4.57.6
+tokenizers==0.22.2
+accelerate==1.12.0
+datasets==4.5.0
+
+# Numerical
+numpy==2.2.6
+
+# Tokenizer / model loading
+sentencepiece==0.2.1
+safetensors==0.8.0rc0
+protobuf==4.21.12
+huggingface_hub==0.36.2
+
+# Transitive deps pinned for reproducibility
+Jinja2==3.1.6
+PyYAML==6.0.3
+regex==2026.1.15
+tqdm==4.67.1
+filelock==3.20.3
+fsspec==2024.3.1
+packaging==26.0
+typing_extensions==4.15.0
+requests==2.32.5

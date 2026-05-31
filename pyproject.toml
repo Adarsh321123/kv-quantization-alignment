@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=64.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alignment-collapse-kv-quantization"
+version = "1.0.0"
+description = "KV cache quantization and LLM safety alignment pipeline"
+requires-python = ">=3.9"
+license = "MIT"
+
+dependencies = [
+    "torch>=2.1.0",
+    "transformers>=4.40.0",
+    "accelerate>=0.25.0",
+    "datasets>=2.14.0",
+    "numpy>=1.24.0",
+    "sentencepiece>=0.1.99",
+    "safetensors>=0.4.0",
+    "huggingface_hub>=0.20.0",
+    "tokenizers>=0.15.0",
+    "protobuf>=3.20",
+]
+
+# For exact reproducibility of the paper numbers, install the pinned
+# versions from requirements.txt instead of the ranges above:
+#   pip install -r requirements.txt && pip install -e . --no-deps
+
+[tool.setuptools.packages.find]
+include = ["core*", "experiments*", "analysis*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.txt", "*.csv"]
