@@ -1,6 +1,6 @@
 # Alignment Collapse Under KV Cache Quantization
 
-[![arXiv](https://img.shields.io/badge/arXiv-TODO-b31b1b.svg)](https://arxiv.org/abs/TODO)
+[![arXiv](https://img.shields.io/badge/arXiv-2606.09864-b31b1b.svg)](https://arxiv.org/abs/2606.09864)
 
 Research codebase accompanying *Alignment Collapse Under KV Cache Quantization: Diagnosis and Mitigation*. The pipeline tests 11 instruction-tuned models (3.8B--72B dense plus an 8x7B Mixture-of-Experts) across bit-width sweeps, mechanistic layer/channel ablation, and mitigation strategies (PCR-guided protection).
 
@@ -325,7 +325,7 @@ kv-quantization-alignment/
 @article{xu2026alignment,
   title     = {Alignment Collapse Under {KV} Cache Quantization: Diagnosis and Mitigation},
   author    = {Xu, Bruce Changlong and Kumarappan, Adarsh and Zhou, Mu},
-  journal   = {arXiv preprint arXiv:TODO},
+  journal   = {arXiv preprint arXiv:2606.09864},
   year      = {2026}
 }
 ```
