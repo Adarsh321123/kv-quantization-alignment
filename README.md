@@ -211,7 +211,7 @@ See [docs/EXPERIMENT_GUIDE.md](docs/EXPERIMENT_GUIDE.md) for all experiments and
 
 ### Additional Experiments
 
-Six additional experiment scripts. Four are GPU experiments in `experiments/`, two are post-hoc analysis in `analysis/`.
+Twelve additional experiment scripts. Seven are GPU experiments in `experiments/`, five are analysis scripts in `analysis/`.
 
 | Script | Exp | What it does |
 |--------|-----|--------------|
@@ -221,6 +221,12 @@ Six additional experiment scripts. Four are GPU experiments in `experiments/`, t
 | `experiments/run_naive_baselines.py` | 9 | Three naive mitigation strategies vs protocol-prescribed fix |
 | `analysis/run_divergence_analysis.py` | 6 | First-divergent-token position for flipped prompts (post-hoc, CSV output) |
 | `analysis/run_second_classifier.py` | 2 | Llama-Guard-3 reclassification of stratified sample, Cohen's kappa |
+| `experiments/run_quarot.py` | — | QuaRot-style Hadamard rotation before KV quantization vs naive |
+| `experiments/run_mitigation_sweep.py` | — | PCR-prescribed mitigation for DeepSeek, Yi, Phi, Mistral-Small, Mixtral |
+| `experiments/run_refusal_probing.py` | — | Projection of quantization error onto the refusal direction |
+| `analysis/pcr_stability.py` | — | AdvBench channel ablation at the critical layer (input to the bootstrap) |
+| `analysis/pcr_bootstrap_sweep.py` | — | PCR bootstrap over random calibration subsets |
+| `analysis/cross_benchmark_layers.py` | — | Critical-layer agreement between the custom suite and AdvBench (no GPU) |
 
 ```bash
 # KIVI vs naive quantization (Exp 1)
